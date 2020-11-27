@@ -1,0 +1,25 @@
+@import "src/app/mixinsAndVariables/variables";
+@import "src/app/mixinsAndVariables/mixins";
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $c-main-home;
+  height: 70px;
+  padding: 0 50px;
+  color: white;
+
+  &__title {
+    @include header__title;
+  }
+
+  &__user-name {
+    margin: 0;
+  }
+}
+
+.main {
+  max-width: 1024px;
+  margin: auto;
+}

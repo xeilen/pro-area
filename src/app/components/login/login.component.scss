@@ -1,0 +1,52 @@
+@import "src/app/mixinsAndVariables/variables";
+@import "src/app/mixinsAndVariables/mixins";
+
+.container {
+  @include container;
+
+  &__form {
+    margin-top: 15px;
+  }
+
+  &__link {
+    margin-top: 15px;
+  }
+}
+
+.header {
+  @include header($c-main-login);
+
+  &__title {
+    @include header__title;
+  }
+
+}
+
+.form {
+  &__button {
+    width: 100%;
+    transition: $t-duration;
+
+    &:hover {
+      transform: scale($scale);
+    }
+  }
+
+  &__error-message {
+    @include errorMessage;
+  }
+}
+
+.link {
+  transition: $t-duration;
+
+  &__text {
+    color: $c-main-login;
+    text-decoration: none;
+  }
+
+  &:hover {
+    transform: scale($scale);
+  }
+}
+

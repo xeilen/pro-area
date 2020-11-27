@@ -1,0 +1,118 @@
+<div class="container">
+  <header class="header">
+    <h1 class="header__title">registration</h1>
+  </header>
+
+  <form
+    class="container__form form"
+    (ngSubmit)="createNewUser({
+  firstName: firstName,
+  lastName: lastName,
+  email: email,
+  password: password
+  })"
+  >
+    <div>
+      <mat-form-field
+        class="form__item"
+        appearance="outline"
+        color="accent"
+      >
+        <mat-label>Name</mat-label>
+
+        <input
+          type="text"
+          required
+          matInput
+          [(ngModel)]="firstName"
+          name="name"
+        >
+      </mat-form-field>
+    </div>
+
+    <div>
+      <mat-form-field appearance="outline" color="accent">
+        <mat-label>Surname</mat-label>
+        <input
+          type="text"
+          required
+          matInput
+          [(ngModel)]="lastName"
+          name="surname"
+        >
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field
+        appearance="outline"
+        color="accent"
+      >
+        <mat-label>Email</mat-label>
+        <input
+          type="text"
+          required
+          matInput
+          [(ngModel)]="email"
+          name="email"
+        >
+      </mat-form-field>
+    </div>
+
+    <div>
+      <mat-form-field
+        appearance="outline"
+        color="accent"
+      >
+        <mat-label>Password</mat-label>
+
+        <input
+          type="password"
+          required
+          matInput
+          [(ngModel)]="password"
+          name="password"
+        >
+        <mat-hint>At least 6 characters</mat-hint>
+      </mat-form-field>
+    </div>
+
+    <div>
+      <mat-form-field
+        appearance="outline"
+        color="accent"
+      >
+        <mat-label>Confirm Password</mat-label>
+
+        <input
+          required
+          type="password"
+          matInput
+          [(ngModel)]="confirmPassword"
+          name="confirm"
+        >
+      </mat-form-field>
+    </div>
+
+    <div class="form__error-message">
+      <span *ngIf="errorMessage">{{errorMessage}}</span>
+    </div>
+
+    <mat-checkbox
+      class="form__checkbox"
+      [(ngModel)]="checked"
+      name="checkbox"
+    >
+      Some agree
+    </mat-checkbox>
+
+    <button
+      class="form__button"
+      mat-raised-button color="accent"
+      [disabled]="!checked
+      || password.trim() !== confirmPassword.trim()
+      || password.length < 6"
+    >
+      Register
+    </button>
+  </form>
+</div>

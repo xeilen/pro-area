@@ -1,0 +1,38 @@
+@mixin container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  margin: 200px auto;
+  padding-bottom: 10px;
+  width: 400px;
+
+  border:  2px solid lightgray;
+  border-radius: 10px;
+  box-shadow: -2px 1px 10px 7px #CECECE;
+
+  background-color: white;
+}
+
+@mixin header($color) {
+  width: 100%;
+  background-color: $color;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+@mixin header__title {
+  margin: 0;
+  line-height: 70px;
+  text-align: center;
+  color: white;
+  text-transform: uppercase;
+  font-weight: 900;
+  letter-spacing: 2px;
+}
+
+@mixin errorMessage {
+  color: red;
+  width: 200px;
+  font-size: 12px;
+}

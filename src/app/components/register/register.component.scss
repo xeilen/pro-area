@@ -1,0 +1,37 @@
+@import "src/app/mixinsAndVariables/variables";
+@import "src/app/mixinsAndVariables/mixins";
+
+.container {
+  @include container;
+
+  &__form {
+    margin-top: 15px;
+  }
+}
+
+.header {
+  @include header($c-main-register);
+
+  &__title {
+    @include header__title;
+  }
+}
+
+.form {
+  &__checkbox {
+    margin-bottom: 10px;
+  }
+  &__button {
+    width: 100%;
+    transition: $t-duration;
+
+
+    &:hover {
+      transform: scale($scale);
+    }
+  }
+
+  &__error-message {
+    @include errorMessage;
+  }
+}

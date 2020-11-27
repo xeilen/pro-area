@@ -1,0 +1,31 @@
+<div class="container">
+  <header class="header">
+    <h1 class="header__title">authorization</h1>
+  </header>
+
+  <form class="form container__form" (ngSubmit)="singIn(email, password)">
+    <div>
+      <mat-form-field appearance="outline" color="primary">
+        <mat-label>Email</mat-label>
+        <input type="text" matInput [(ngModel)]="email" name="email">
+      </mat-form-field>
+    </div>
+
+    <div>
+      <mat-form-field appearance="outline" color="primary">
+        <mat-label>Password</mat-label>
+        <input type="password" matInput [(ngModel)]="password" name="password">
+      </mat-form-field>
+    </div>
+
+    <div class="form__error-message">
+      <span *ngIf="errorMessage">{{errorMessage}}</span>
+    </div>
+
+    <button class="form__button" mat-raised-button color="primary">Login</button>
+  </form>
+
+  <div class="container__link link">
+    <a class="link__text" routerLink="/register">Create new account</a>
+  </div>
+</div>
