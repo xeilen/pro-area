@@ -15,10 +15,9 @@ import { TableComponent } from './components/table/table.component';
 import { Routes, RouterModule} from '@angular/router';
 
 const routes: Routes = [
-  {path: '', redirectTo: 'login', pathMatch: 'full'},
   {path: 'home', component: HomeComponent},
   {path: 'register', component: RegisterComponent},
-  {path: 'login', component: LoginComponent }
+  {path: '', component: LoginComponent }
 ];
 
 
