@@ -20,6 +20,6 @@ export class HomeComponent implements OnInit{
 
   logOut(): any {
     this.fireBaseService.logout()
-      .then(_ => this.router.navigate(['']));
+      .then(_ => this.router.navigate(['/login']));
   }
 }
